@@ -1,12 +1,6 @@
 ## EX. NO:2 IMPLEMENTATION OF PLAYFAIR CIPHER
 
- 
-
-## AIM:
- 
-
- 
-
+ ## AIM:
 To write a C program to implement the Playfair Substitution technique.
 
 ## DESCRIPTION:
@@ -26,18 +20,43 @@ To encrypt a message, one would break the message into digrams (groups of 2 lett
 ## ALGORITHM:
 
 STEP-1: Read the plain text from the user.
+
 STEP-2: Read the keyword from the user.
+
 STEP-3: Arrange the keyword without duplicates in a 5*5 matrix in the row order and fill the remaining cells with missed out letters in alphabetical order. Note that ‘i’ and ‘j’ takes the same cell.
+
 STEP-4: Group the plain text in pairs and match the corresponding corner letters by forming a rectangular grid.
+
 STEP-5: Display the obtained cipher text.
 
 
 
 
-Program:
+## Program:
+```
+import numpy as np
 
+def main():
+    a = np.array([[6, 24, 1], [13, 16, 10], [20, 17, 15]])
+    b = np.array([[8, 5, 10], [21, 8, 21], [21, 12, 8]])
+    
+    msg = input("Enter plain text: ")
+    c = [ord(char) - ord('a') for char in msg]
+    print("Numeric Representation:", ' '.join(str(num + 32) for num in c))
+    
+    d = np.dot(a, c[:3]) % 26  # Only take the first 3 characters
+    print("Encrypted Cipher Text:", ' '.join(chr(num + 65) for num in d))
+    
+    c_decrypted = np.dot(b, d) % 26
+    print("Decrypted Cipher Text:", ' '.join(chr(num + 65) for num in c_decrypted))
+    
+if __name__ == "__main__":
+    main()
+```
 
+## Output:
+![image](https://github.com/user-attachments/assets/27111e0a-bbf1-48b6-80d5-358c8de95cec)
 
+## Result
+Thus the program is executed succesfully
 
-
-Output:
