@@ -55,7 +55,7 @@ if __name__ == "__main__":
 ```
 
 ## Output:
-![image](https://github.com/user-attachments/assets/27111e0a-bbf1-48b6-80d5-358c8de95cec)
+![image](https://github.com/user-attachments/assets/c3a4de79-12f4-4ca7-aa2a-4ecddc4aad29)
 
 ## Result
 Thus the program is executed succesfully
